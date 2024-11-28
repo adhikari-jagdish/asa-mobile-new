@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "211289249677",
+    "project_id": "aspiration-asia-5410e",
+    "storage_bucket": "aspiration-asia-5410e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211289249677:android:b75fcb26a97895d954cfc4",
+        "android_client_info": {
+          "package_name": "com.sombreroinfotech.asp_asia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211289249677-kqaghcatkcs3fob1v9m6794p2uf2rq9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sombreroinfotech.asp_asia",
+            "certificate_hash": "50c5d138a78362c1fb449ec872b9329e3c6cba41"
+          }
+        },
+        {
+          "client_id": "211289249677-srb3h28kodnfc62tofo227qvujce4fea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVACxAoTo0qZXWwtXivRpoP7HeF9i1SZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211289249677-srb3h28kodnfc62tofo227qvujce4fea.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "211289249677-uisc5ifijm8mokpu54oak25ho0b6v35n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sombreroinfotech.aspAsia"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
