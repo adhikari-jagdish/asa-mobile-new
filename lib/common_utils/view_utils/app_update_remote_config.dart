@@ -3,8 +3,8 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_store/open_store.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:package_info/package_info.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 
 import '../common_strings.dart';
@@ -26,13 +26,13 @@ versionCheck(context) async {
     );
     await remoteConfig.fetch();
     await remoteConfig.fetchAndActivate();
-    if(Platform.isIOS){
+    if (Platform.isIOS) {
       remoteConfig.getString('ios_current_version');
       newVersion = double.parse(remoteConfig
           .getString('ios_current_version')
           .trim()
           .replaceAll(".", ""));
-    }else if(Platform.isAndroid){
+    } else if (Platform.isAndroid) {
       remoteConfig.getString('android_current_version');
       newVersion = double.parse(remoteConfig
           .getString('android_current_version')

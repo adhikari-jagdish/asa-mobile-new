@@ -21,6 +21,15 @@ class LoginUsernamePasswordFields extends StatelessWidget {
   final GlobalKey<FormBuilderState> formKey;
 
   @override
+
+  /// Builds the login form widget with email/mobile and password fields.
+  ///
+  /// The form includes a toggle to switch between email and mobile number input.
+  /// It uses `BlocBuilder` to manage the state of the email/mobile and password
+  /// visibility toggles. The form fields include validation logic for both
+  /// username and password fields, ensuring that the input meets the required
+  /// criteria. The `CountryPickerDropdown` is used for selecting the country
+  /// code when the mobile number input is active.
   Widget build(BuildContext context) {
     return FormBuilder(
       key: formKey,

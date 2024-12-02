@@ -1,4 +1,4 @@
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:io';
 
@@ -13,7 +13,8 @@ class FirebaseRemoteConfigServices {
   Future<void> versionCheck(context) async {
     //Get Current installed version of app
     final PackageInfo info = await PackageInfo.fromPlatform();
-    double currentVersion = double.parse(info.version.trim().replaceAll(".", ""));
+    double currentVersion =
+        double.parse(info.version.trim().replaceAll(".", ""));
     //Get Latest version info from firebase config
     final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
 
@@ -22,9 +23,15 @@ class FirebaseRemoteConfigServices {
       await remoteConfig.fetchAndActivate();
       double? newVersion;
       if (Platform.isIOS) {
-        newVersion = double.parse(remoteConfig.getString('aspiration_asia_ios_current_version').trim().replaceAll(".", ""));
+        newVersion = double.parse(remoteConfig
+            .getString('aspiration_asia_ios_current_version')
+            .trim()
+            .replaceAll(".", ""));
       } else {
-        newVersion = double.parse(remoteConfig.getString('aspiration_asia_current_version').trim().replaceAll(".", ""));
+        newVersion = double.parse(remoteConfig
+            .getString('aspiration_asia_current_version')
+            .trim()
+            .replaceAll(".", ""));
       }
       if (newVersion > currentVersion) {
         // print('new version is greater than current version');
@@ -44,20 +51,24 @@ class FirebaseRemoteConfigServices {
   }
 
   _showVersionDialog(context) async {
-    const appStoreUrl = 'https://apps.apple.com/us/app/aspiration-asia/id15590022391122';
-    const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.sombreroinfotech.aspiration-asia';
+    const appStoreUrl =
+        'https://apps.apple.com/us/app/aspiration-asia/id15590022391122';
+    const playStoreUrl =
+        'https://play.google.com/store/apps/details?id=com.sombreroinfotech.aspiration-asia';
     await showDialog(
       context: context,
       barrierDismissible: false,
       builder: (dContext) {
         String title = 'App Update';
-        String message = 'A newer version of the app is available, please update now for new features.';
+        String message =
+            'A newer version of the app is available, please update now for new features.';
         String btnUpdateLabel = 'Update Now';
         String btnLabelCancel = 'Later';
         return CupertinoAlertDialog(
           title: Text(
             title,
-            style: CustomStyle.blackTextMedium.copyWith(color: CustomColor.color2a8dc8),
+            style: CustomStyle.blackTextMedium
+                .copyWith(color: CustomColor.color2a8dc8),
           ),
           content: Text(
             message,
